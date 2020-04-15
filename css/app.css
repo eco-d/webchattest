@@ -3,7 +3,6 @@
 body, html {
     background-color: whitesmoke;
     height: 100%;
-    overflow: hidden;
 }
 #videos {
     position: relative;
