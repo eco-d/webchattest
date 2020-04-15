@@ -6,6 +6,23 @@ var session;
 var sessionId;
 var token;
 
+
+// 
+// 
+// Toggle Button
+var Toggle_element = document.getElementById("toggler");
+function toggleclass() {
+  if (this.getAttribute("class") == "toggle-on")
+    this.setAttribute("class", "toggle-off")
+  else
+    this.setAttribute("class", "toggle-on");
+};
+Toggle_element.addEventListener('click', toggleclass);
+// 
+// 
+
+
+
 function initializeSession() {
   session = OT.initSession(apiKey, sessionId);
 
