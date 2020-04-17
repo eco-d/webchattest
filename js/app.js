@@ -59,8 +59,17 @@ function initializeSession() {
   var msgHistory = document.querySelector('#history');
   session.on('signal:msg', function signalCallback(event) {
     var msg = document.createElement('p');
-    msg.textContent = event.data;
-    msg.className = event.from.connectionId === session.connection.connectionId ? 'mine' : 'theirs';
+    // msg.textContent = event.data;
+    // msg.className = event.from.connectionId === session.connection.connectionId ? 'mine' : 'theirs';
+    if (event.from.connectionId === session.connection.connectionId){
+      msg.className = 'mine';
+      msg.textContent = 'me: ' + event.data;
+    }
+    else {
+      msg.className = 'theirs';
+      msg.textContent = 'them: ' + event.data;
+    }
+
     msgHistory.appendChild(msg);
     msg.scrollIntoView();
   });
